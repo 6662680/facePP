@@ -1,0 +1,363 @@
+/*
+ * Author: Carlos Alvarez
+ * URL: http://alvarez.is
+ *
+ * Project Name: STANLEY - Free Bootstrap 3 Theme
+ * Version: 1.0
+ * URL: http://blacktie.co
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+  	background-color: #ffffff;
+  	font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+
+h1 {
+	font-size: 35px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #1abc9c;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+.navbar {
+	text-transform: uppercase;
+	margin-bottom: 0px;
+}
+
+.navbar-inverse {
+	padding-bottom: 70px;
+	padding-top: 70px;
+}
+
+.navbar-inverse {
+	background-color: #1abc9c;
+	border-color: #16a085;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: #222222;
+}
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: transparent;
+}
+
+.progress-bar-theme {
+  background-color: #1abc9c;
+}
+
+
+/* Helpers */
+
+.mt {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.pt {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+
+/* +++++ WRAP SECTIONS +++++ */
+
+#ww {
+	padding-top: 70px;
+	padding-bottom: 70px;
+	background-color: #f2f2f2;
+}
+
+
+#footer {
+	background-color: #2f2f2f;
+	padding-top: 50px;
+	padding-bottom: 50px; 
+}
+
+#footer p {
+	color: white;
+}
+
+#footer h4 {
+	color: white;
+	text-transform: uppercase;
+	padding-bottom: 20px;
+}
+
+
+/* +++++ Color Wraps / Blog Page +++++ */
+
+#grey {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #f2f2f2;
+}
+
+#white {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #ffffff;
+}
+
+
+
+/* Blog Date*/
+bd {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #d2d2d2;
+	font-weight: 700;
+}
+
+/* Blog Author*/
+ba {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+/* Blog Quote */
+.bq {
+	font-size: 22px;
+	padding-top: 30px;
+}
+
+/* Blog Tags */
+bt {
+	font-size: 12px;
+}
+
+/* ================== PORTFOLIO IMAGES HOVER EFFECT ================== */
+/* Effects also are controled by hover.zoom.js */
+.zoom { 
+    display:block; 
+    position:relative; 
+    overflow:hidden; 
+    background:transparent url(../img/loader.gif) no-repeat center;
+}
+
+
+    .zoomOverlay {
+        position:absolute;
+        top:0; left:0;
+        bottom:0; right:0;
+        display:none;
+        background-image:url(../img/zoom.png);
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+
+.zoom2 {
+	opacity: 1;
+}
+
+.zoom2:hover {
+	opacity: 0.5;
+}
+
+/* glyphicon Configuration */
+
+.glyphicon {
+	font-size: 40px;
+	color: #1abc9c;
+}
+.ol_loading_mask{
+    /*height:100%;*/
+    /*width:100%;*/
+    /*position: static;*/
+    /*top:0;*/
+    /*left:0;*/
+    background-color: #fff;
+    opacity: 0.6;
+    filter: alpha(opacity = 60);
+    display:none;
+    z-index: 10001;
+}
+.ol_loading_mask img{
+    margin-left: -31px;
+    margin-top: -31px;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    z-index: 100002;
+}
+.image-box{
+    text-align: center;
+    margin:0 auto;
+}
+.img-responsive{
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0 auto;
+    max-height: 640px;
+}
+.callout.callout-info, .alert-info, .label-info, .modal-info .modal-body {
+    background-color: #00c0ef !important;
+}
+.bg-red, .bg-yellow, .bg-aqua, .bg-blue, .bg-light-blue, .bg-green, .bg-navy, .bg-teal, .bg-olive, .bg-lime, .bg-orange, .bg-fuchsia, .bg-purple, .bg-maroon, .bg-black, .bg-red-active, .bg-yellow-active, .bg-aqua-active, .bg-blue-active, .bg-light-blue-active, .bg-green-active, .bg-navy-active, .bg-teal-active, .bg-olive-active, .bg-lime-active, .bg-orange-active, .bg-fuchsia-active, .bg-purple-active, .bg-maroon-active, .bg-black-active, .callout.callout-danger, .callout.callout-warning, .callout.callout-info, .callout.callout-success, .alert-success, .alert-danger, .alert-error, .alert-warning, .alert-info, .label-danger, .label-info, .label-waring, .label-primary, .label-success, .modal-primary .modal-body, .modal-primary .modal-header, .modal-primary .modal-footer, .modal-warning .modal-body, .modal-warning .modal-header, .modal-warning .modal-footer, .modal-info .modal-body, .modal-info .modal-header, .modal-info .modal-footer, .modal-success .modal-body, .modal-success .modal-header, .modal-success .modal-footer, .modal-danger .modal-body, .modal-danger .modal-header, .modal-danger .modal-footer {
+    color: #fff !important;
+}
+.callout.callout-info {
+    border-color: #0097bc;
+}
+.callout {
+    border-radius: 3px;
+    margin: 0 0 20px 0;
+    padding: 15px 30px 15px 15px;
+    border-left: 5px solid #eee;
+}
+.callout h4 {
+    margin-top: 0;
+    font-weight: 600;
+}
+.tooltip.top {
+    padding: 5px 0;
+    margin-top: -3px;
+}
+.tooltip.in {
+    filter: alpha(opacity=90);
+    opacity: .9;
+}
+.tooltip {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+.face-tooltip+.tooltip>.tooltip-arrow {
+    border-bottom-color: #f1d100;
+    border-top-color: #f1d100;
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    margin-left: -10px;
+    margin-bottom: -3px;
+}
+.tooltip.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+}
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+.big-face-tooltip+.tooltip>.tooltip-inner {
+    font-size: 50px;
+}
+.face-tooltip+.tooltip>.tooltip-inner {
+    background-color: #f1d100;
+    border-radius: 0;
+    color: #d86718;
+    font-size: x-large;
+    font-family: Segoe UI Light,CustomSegoeUILight,Arial;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-shadow: 5px 5px 10px #333;
+}
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 4px;
+}

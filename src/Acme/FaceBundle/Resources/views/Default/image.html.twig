@@ -1,0 +1,75 @@
+{% extends "AcmeFaceBundle::default_layout.html.twig" %}
+
+{% block faceContent %}
+    <!-- +++++ Post +++++ -->
+    <div id="white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <input type="hidden" value="{{ imageList|json_encode }}" id="imageListInfo" />
+                    <div class="callout callout-info" id="callOutInfo" style="display: none;">
+                        <h4 id="messageTitle"> </h4>
+                        <span id="messageText"></span>
+                    </div>
+                    {#<h4>多少岁了？</h4>#}
+
+                    <div id="image-box" style="position: relative; width: {{ image.getWidth }}px; height: {{ image.getHeight }}px;">
+                        <img id="image-info" class="img-responsive" src="{{ imageUrl }}" alt="" style="position: relative; width: {{ image.getWidth }}px; height: {{ image.getHeight }}px;">
+                        <div id="faces">
+                            <div></div>
+                        </div>
+                    </div>
+                    <p>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>性别</th>
+                            <th>年龄</th>
+                            <th>是否佩戴眼镜</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for key, item in imageList %}
+                            <tr>
+                                <th scope="row">{{ key }}</th>
+                                <td>{{ item.attribute.gender.value }}</td>
+                                <td>{{ item.attribute.age.value }}</td>
+                                <td>{{ item.attribute.glass.value }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    </p>
+                    <hr>
+                    <p><a href="{{ url('default_index') }}"># 返回</a></p>
+                </div>
+
+            </div><!-- /row -->
+        </div> <!-- /container -->
+    </div><!-- /white -->
+
+{% endblock %}
+
+{% block faceJavascripts %}
+    {% javascripts
+    '@AcmeFaceBundle/Resources/public/assets/js/main.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        {% if imageInfo is null %}
+            main.loadedImageInfo({{ image.getId }});
+        {% endif %}
+        var imageList = [],
+                imageWidth = {{ image.getWidth }},
+                imageHeight = {{ image.getHeight }}
+
+        {% if imageInfo %}
+            imageList = jQuery.parseJSON($('#imageListInfo').val());
+            main.setImageFace(imageList);
+        {% endif %}
+    </script>
+
+{% endblock %}

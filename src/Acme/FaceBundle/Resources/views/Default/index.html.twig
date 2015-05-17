@@ -1,0 +1,39 @@
+{% extends "AcmeFaceBundle::default_layout.html.twig" %}
+
+{% block faceContent %}
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 centered">
+                <h1>计算你的年龄!</h1>
+                <img src="http://how-old.net/Images/faces2/scroll003.jpg" alt="Stanley">
+                <p>
+                <div class="row mt">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <form role="form" enctype="multipart/form-data" method="post">
+                            <div class="form-group">
+                                <input type="file" id="uploadFile" name="image">
+                                <br>
+                            </div>
+                            {#<button type="submit" class="btn btn-success"></button>#}
+                        </form>
+                    </div>
+                </div>
+                </p>
+            </div><!-- /col-lg-8 -->
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /ww -->
+
+{% endblock %}
+
+{% block faceJavascripts %}
+    {#<script src="http://storage.lattecake.com/static/js/ajaxfileupload.js"></script>#}
+    <script src="/js/ajaxfileupload.js"></script>
+    {% javascripts
+        '@AcmeFaceBundle/Resources/public/assets/js/main.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
