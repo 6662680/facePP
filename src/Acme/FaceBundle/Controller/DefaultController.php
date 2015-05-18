@@ -66,7 +66,7 @@ class DefaultController extends Controller
             'imageId' => $image->getId()
         ]);
 
-        $imageUrl = self::BASE_URL . 'uploads/images/' . substr($imageName, 15, 2) . '/' . substr($imageName, 8, 2) . '/' . $imageName;
+        $imageUrl = self::BASE_URL . './uploads/images/' . substr($imageName, 15, 2) . '/' . substr($imageName, 8, 2) . '/' . $imageName;
 
         /** 如果有该图片的信息话使用七牛的图片地址 */
         if ($imageInfo) {
