@@ -21,7 +21,7 @@ use Acme\FaceBundle\Entity\ImageInfo;
  */
 class DefaultController extends Controller
 {
-    const BASE_URL = 'http://facePP.lattecake.com/';
+    const BASE_URL = 'http://face.lattecake.com/';
 
     /**
      * 首页
