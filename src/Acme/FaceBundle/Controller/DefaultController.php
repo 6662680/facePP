@@ -21,7 +21,8 @@ use Acme\FaceBundle\Entity\ImageInfo;
  */
 class DefaultController extends Controller
 {
-    const BASE_URL = 'http://face.lattecake.com/';
+    const BASE_URL   = 'http://face.lattecake.com/';
+    const SOURCE_URL = 'http://source.lattecake.com/';
 
     /**
      * 首页
@@ -66,7 +67,9 @@ class DefaultController extends Controller
             'imageId' => $image->getId()
         ]);
 
-        $imageUrl = self::BASE_URL . './uploads/images/' . substr($imageName, 15, 2) . '/' . substr($imageName, 8, 2) . '/' . $imageName;
+        $imageUrl = substr($imageName, 15, 2) . '/' . substr($imageName, 8, 2) . '/' . $imageName;
+
+        $imageUrl = self::SOURCE_URL.'face/images/'.$imageUrl.'?imageView/2/w/800';;
 
         /** 如果有该图片的信息话使用七牛的图片地址 */
         if ($imageInfo) {
@@ -108,16 +111,16 @@ class DefaultController extends Controller
             );
         }
 
-        $appRoot = $this->get('kernel')->getRootDir();
+//        $appRoot = $this->get('kernel')->getRootDir();
 
-        $imageUrl = '/uploads/images/' . substr($image->getName(), 15, 2) . '/' . substr($image->getName(), 8, 2) . '/' . $image->getName();
+        $imageUrl = substr($image->getName(), 15, 2) . '/' . substr($image->getName(), 8, 2) . '/' . $image->getName();
 
         /** 调用接口获取该图片的年龄相关信息 */
         $facePP = new \Facepp();
         $facePP->api_key       = $this->container->getParameter('facePP_key');
         $facePP->api_secret    = $this->container->getParameter('facePP_secret');
 
-        $params['url']          = 'http://source.lattecake.com/images/2015/05/f1c40eebd7da8a10caf5d33425d83393.jpeg?imageView/2/w/800';
+        $params['url']          = self::SOURCE_URL.'face/images/'.$imageUrl.'?imageView/2/w/800';
         $params['attribute']    = 'gender,age,race,smiling,glass,pose';
         $response               = $facePP->execute('/detection/detect',$params);
 //        $source = str_replace('/app', '/web', $appRoot).$imageUrl;
