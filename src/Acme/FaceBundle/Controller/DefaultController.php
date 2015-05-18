@@ -115,20 +115,6 @@ class DefaultController extends Controller
 
         $imageUrl = substr($image->getName(), 15, 2) . '/' . substr($image->getName(), 8, 2) . '/' . $image->getName();
 
-
-        list($width, $height, $type, $attr) = getimagesize('./uploads/images/'.$imageUrl);
-        if( $width > 800 )
-        {
-            $jsonResponse = [
-                'success'   => false,
-                'message'   => '请上传宽度小于800像素的屁股...',
-                'errorCode' => 'IMAGE_IS_MAX',
-                'data'      => [
-                ]
-            ];
-            return new JsonResponse($jsonResponse);
-        }
-
         /** 调用接口获取该图片的年龄相关信息 */
         $facePP = new \Facepp();
         $facePP->api_key       = $this->container->getParameter('facePP_key');
@@ -236,6 +222,18 @@ class DefaultController extends Controller
                 $file->move( $dir,  $name );
 
                 list($width, $height, $type, $attr) = getimagesize($dir.'/'.$name);
+
+                if( $width > 800 )
+                {
+                    $jsonResponse = [
+                        'success'   => false,
+                        'message'   => '请上传宽度小于800像素的屁股...',
+                        'errorCode' => 'IMAGE_IS_MAX',
+                        'data'      => [
+                        ]
+                    ];
+                    return new JsonResponse($jsonResponse);
+                }
 
                 $image = new Image();
                 $image->setName($name);
