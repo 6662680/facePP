@@ -67,7 +67,20 @@ var main = {
 
     setImageInfo: function( response )
     {
-        console.log(response);
+        var tableHtml = '';
+        $.each( response.faceinfo, function(key, item){
+            var attribute = item.attribute,
+                gender = 'male';
+            if( attribute.gender.value == 'Female' )
+                gender = 'female';
+
+            tableHtml += '<tr> <th scope="row">'+ key +'</th> ' +
+            '<td>' + gender + '</td> ' +
+            '<td>' + attribute.age.value + '</td>' +
+            '<td>' + attribute.glass.value + '</td></tr>';
+        });
+        $('#table-list').html( tableHtml );
+        this.setImageFace( response.faceInfo );
     },
 
     setImageFace: function( imageList )
