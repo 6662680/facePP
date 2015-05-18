@@ -26,6 +26,7 @@ $(function(){
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 var img = "图片上传失败！";
                 sweetAlert("Oops...", img, "error");
+                loadingMask.hide();
             },
             complete: function (XMLHttpRequest, textStatus) {
                 //("loaded");
@@ -41,8 +42,8 @@ $(function(){
                     }, function(){
                         window.location.reload();
                     });
-
                 }
+                loadingMask.hide();
             }
         });
     });
