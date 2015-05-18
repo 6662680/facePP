@@ -116,7 +116,7 @@ class DefaultController extends Controller
         $imageUrl = substr($image->getName(), 15, 2) . '/' . substr($image->getName(), 8, 2) . '/' . $image->getName();
 
 
-        list($width, $height, $type, $attr) = getimagesize('.uploads/images/'.$imageUrl);
+        list($width, $height, $type, $attr) = getimagesize('./uploads/images/'.$imageUrl);
         if( $width > 800 )
         {
             $jsonResponse = [
