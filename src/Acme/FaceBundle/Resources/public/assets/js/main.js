@@ -29,8 +29,21 @@ $(function(){
             },
             complete: function (XMLHttpRequest, textStatus) {
                 //("loaded");
-                console.log(XMLHttpRequest);
-                console.log(textStatus);
+                if( textStatus == 'error' )
+                {
+                    console.log(jQuery.parseJSON( XMLHttpRequest ));
+                    swal({
+                        title: "错误?",
+                        text: "",
+                        type: "error",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "好的...",
+                        closeOnConfirm: false
+                    }, function(){
+                        window.location.reload();
+                    });
+
+                }
             }
         });
     });
