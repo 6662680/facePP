@@ -68,7 +68,7 @@ var main = {
     setImageInfo: function( response )
     {
         var tableHtml = '';
-        $.each( response.faceinfo, function(key, item){
+        $.each( response.faceInfo, function(key, item){
             var attribute = item.attribute,
                 gender = 'male';
             if( attribute.gender.value == 'Female' )
