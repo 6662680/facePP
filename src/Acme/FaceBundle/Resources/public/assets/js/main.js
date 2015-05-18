@@ -128,7 +128,7 @@ var loadingMask = {
     maskBox: $('#loading-mask'),
     show: function()
     {
-        this.setMaskBoxSize()
+        this.setMaskBoxSize();
         this.maskBox.show();
     },
     hide: function()
