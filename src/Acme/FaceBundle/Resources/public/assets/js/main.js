@@ -31,10 +31,9 @@ $(function(){
                 //("loaded");
                 if( textStatus == 'error' )
                 {
-                    console.log(jQuery.parseJSON( XMLHttpRequest ));
                     swal({
                         title: "错误?",
-                        text: "",
+                        text: "请上传宽度小于800像素的屁股...",
                         type: "error",
                         confirmButtonColor: "#DD6B55",
                         confirmButtonText: "好的...",
