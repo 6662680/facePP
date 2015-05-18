@@ -92,8 +92,8 @@ var main = {
                 attribute = item.attribute;
             var faceTooltipWidth  = Math.ceil(imageWidth * (positoin.width / 100)),
                 faceTooltipHeight = Math.ceil(imageHeight * (positoin.height / 100)),
-                faceTooltipLeft   = Math.ceil((imageWidth / 2) * (positoin.center.x / 100) - positoin.center.x),
-                faceTooltipTop    = Math.ceil((imageWidth / 2) * (positoin.center.y / 100) / 2 - ( positoin.center.y / 2 ) ),
+                faceTooltipLeft   = Math.ceil(imageWidth * (positoin.center.x / 100) - (faceTooltipWidth / 2)),
+                faceTooltipTop    = Math.ceil(imageWidth * (positoin.center.y / 100) / 2 - ( positoin.center.y / 2 ) ),
                 tooltipTop        = Math.ceil(faceTooltipTop - (faceTooltipHeight) / 2) - 49,
                 tooltipLeft       = Math.ceil(faceTooltipLeft + (faceTooltipWidth / 2)) - 42;
 
