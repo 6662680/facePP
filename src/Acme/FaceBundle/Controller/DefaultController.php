@@ -69,7 +69,7 @@ class DefaultController extends Controller
 
         $imageUrl = substr($imageName, 15, 2) . '/' . substr($imageName, 8, 2) . '/' . $imageName;
 
-        $imageUrl = self::SOURCE_URL.'face/images/'.$imageUrl.'?imageView/2/w/800';;
+        $imageUrl = self::SOURCE_URL.'face/images/'.$imageUrl;
 
         /** 如果有该图片的信息话使用七牛的图片地址 */
         if ($imageInfo) {
@@ -120,7 +120,7 @@ class DefaultController extends Controller
         $facePP->api_key       = $this->container->getParameter('facePP_key');
         $facePP->api_secret    = $this->container->getParameter('facePP_secret');
 
-        $params['url']          = self::SOURCE_URL.'face/images/'.$imageUrl.'?imageView/2/w/800';
+        $params['url']          = self::SOURCE_URL.'face/images/'.$imageUrl;
         $params['attribute']    = 'gender,age,race,smiling,glass,pose';
         $response               = $facePP->execute('/detection/detect',$params);
 //        $source = str_replace('/app', '/web', $appRoot).$imageUrl;
