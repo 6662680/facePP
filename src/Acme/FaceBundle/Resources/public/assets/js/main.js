@@ -14,8 +14,6 @@ $(function(){
                 console.log(XMLHttpRequest);
             },
             success: function (data, textStatus) {
-                console.log(data);
-                console.log(textStatus);
                 if( data.success )
                 {
                     window.location.href = data.data.redirect;
@@ -95,7 +93,7 @@ var main = {
                 faceTooltipLeft   = Math.ceil(imageWidth * (positoin.center.x / 100) - (faceTooltipWidth / 2)),
                 faceTooltipTop    = Math.ceil(imageWidth * (positoin.center.y / 100) / 2 + ( faceTooltipHeight / 2 ) ),
                 tooltipTop        = faceTooltipTop - 100,
-                tooltipLeft       = Math.ceil(faceTooltipLeft + (faceTooltipWidth / 2)) - 37;
+                tooltipLeft       = Math.ceil(faceTooltipLeft + (faceTooltipWidth / 2)) - 42;
 
             var gender = 'male';
             if( attribute.gender.value == 'Female' )
