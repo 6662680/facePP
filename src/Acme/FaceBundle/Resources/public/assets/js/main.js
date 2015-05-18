@@ -20,6 +20,7 @@ $(function(){
                 }else
                 {
                     sweetAlert("Oops...", data.message, "error");
+                    window.location.reload();
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
