@@ -34,7 +34,7 @@ $(function(){
                 {
                     swal({
                         title: "错误?",
-                        text: "请上传宽度小于800像素的屁股...",
+                        text: "请上传宽度小于1000像素的屁股...",
                         type: "error",
                         confirmButtonColor: "#DD6B55",
                         confirmButtonText: "好的...",

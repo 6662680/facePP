@@ -223,7 +223,7 @@ class DefaultController extends Controller
 
                 list($width, $height, $type, $attr) = getimagesize($dir.'/'.$name);
 
-                if( $width > 800 )
+                if( $width > 1000 )
                 {
                     $jsonResponse = [
                         'success'   => false,
