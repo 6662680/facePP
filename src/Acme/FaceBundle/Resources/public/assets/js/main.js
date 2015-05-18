@@ -94,7 +94,7 @@ var main = {
                 faceTooltipHeight = Math.ceil(imageHeight * (positoin.height / 100)),
                 faceTooltipLeft   = Math.ceil(imageWidth * (positoin.center.x / 100) - (faceTooltipWidth / 2)),
                 faceTooltipTop    = Math.ceil(imageWidth * (positoin.center.y / 100) / 2 + ( faceTooltipHeight / 2 ) ),
-                tooltipTop        = Math.ceil(faceTooltipTop - (faceTooltipHeight) / 2) - 49,
+                tooltipTop        = Math.ceil(faceTooltipTop - (faceTooltipHeight) / 2) + 49,
                 tooltipLeft       = Math.ceil(faceTooltipLeft + (faceTooltipWidth / 2)) - 42;
 
             var gender = 'male';
